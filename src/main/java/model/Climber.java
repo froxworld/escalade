@@ -70,7 +70,11 @@ public class Climber {
         this.friends = friends;
     }
 
-    public void addFriends(Climber friend) {
+    public void addFriend(Climber friend) {
         friends.add(friend);
+    }
+
+    public boolean removeFriend(Climber friend){
+        return friends.remove(friend);
     }
 }
