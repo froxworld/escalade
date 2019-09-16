@@ -9,7 +9,11 @@
           <factory-entry name="mysql" value="31f2b62b-8dc9-4179-b64b-ea2c43e52762" />
           <factory-entry name="prod" value="458936e3-5656-493b-9b1b-9e4987565d8c" />
         </datasource-mapping>
-        <naming-strategy-map />
+        <naming-strategy-map>
+          <unit-entry name="dev" />
+          <unit-entry name="mysql" />
+          <unit-entry name="prod" />
+        </naming-strategy-map>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/java/resources/META-INF/persistence.xml" />
       </configuration>
     </facet>
