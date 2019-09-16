@@ -108,6 +108,7 @@ public class Route {
         this.coorLong = coorLong;
     }
 
+    @Temporal(TemporalType.DATE)
     public Calendar getTimeStamp() {
         return timeStamp;
     }

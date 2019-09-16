@@ -9,10 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class JpaTest {
 
@@ -20,9 +17,7 @@ public class JpaTest {
      * @param args
      */
     public static void main(String[] args) {
-        EntityManagerFactory factory = Persistence
-                .createEntityManagerFactory("dev");
-        EntityManager manager = factory.createEntityManager();
+        EntityManager manager = EntityManagerHelper.getEntityManager();
 
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -35,7 +30,7 @@ public class JpaTest {
             c1.addFriend(c2);
             c3.addFriend(c2);
 
-            List<Climber> l1 = new ArrayList<Climber>();
+            List<Climber> l1 = new ArrayList<>();
             l1.add(c1);
             l1.add(c2);
             //add Routes
@@ -52,9 +47,8 @@ public class JpaTest {
             float coordLong2 = 3.26589f;
 
             Calendar cal1 =  Calendar.getInstance();
-
             Route r1 = new Route(l1, c1, n1, p1, coordLat1, coordLong1, cal1, RouteType.BOULDER);
-            Route r2 = new Route(l1, c2, n1, p1, coordLat2, coordLong1, cal1, RouteType.EXTERIOR);
+            Route r2 = new Route(l1, c2, n2, p1, coordLat2, coordLong1, cal1, RouteType.EXTERIOR);
             Route r3 = new Route(l1, c3, n1, p1, coordLat1, coordLong2, cal1, RouteType.INTERIOR);
 
             manager.persist(c1);
@@ -77,7 +71,6 @@ public class JpaTest {
         tx.commit();
 
         manager.close();
-        factory.close();
     }
 
 }
