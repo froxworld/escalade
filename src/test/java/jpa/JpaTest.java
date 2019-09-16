@@ -1,6 +1,6 @@
 package jpa;
 
-import model.Climber;
+import App.domain.Climber;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

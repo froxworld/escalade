@@ -1,4 +1,5 @@
-package model;
+package App.domain;
+
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -7,10 +8,10 @@ import java.util.List;
 
 @Entity
 public class Climber {
-    int id;
+    long id;
     String name;
     List<Route> opens;
-    List<Route> realizations;
+    List<App.domain.Route> realizations;
     List<Climber> friends;
 
 
@@ -26,11 +27,11 @@ public class Climber {
 
     @Id // primary key
     @GeneratedValue
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -43,20 +44,20 @@ public class Climber {
     }
 
     @OneToMany(mappedBy = "opener") // on dit que la relation est portée par l'attribut opener dans Route
-    public List<Route> getOpens() {
+    public List<App.domain.Route> getOpens() {
         return opens;
     }
 
-    public void setOpens(List<Route> opens) {
+    public void setOpens(List<App.domain.Route> opens) {
         this.opens = opens;
     }
 
     @ManyToMany(mappedBy = "climbers") // on dit que la relation est portée par l'attribut climbers de Route
-    public List<Route> getRealizations() {
+    public List<App.domain.Route> getRealizations() {
         return realizations;
     }
 
-    public void setRealizations(List<Route> realizations) {
+    public void setRealizations(List<App.domain.Route> realizations) {
         this.realizations = realizations;
     }
 
