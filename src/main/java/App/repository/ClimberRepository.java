@@ -1,4 +1,4 @@
-package App.dto;
+package App.repository;
 
 import App.domain.Climber;
 import org.springframework.data.repository.CrudRepository;

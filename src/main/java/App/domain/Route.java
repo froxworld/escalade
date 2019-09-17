@@ -11,7 +11,7 @@ public class Route {
     int id;
 
 
-    List<App.domain.Climber> climbers;
+    List<Climber> climbers;
     String name;
     App.domain.Climber opener;
     App.domain.Place place;

@@ -1,18 +1,15 @@
 package App.services;
 
 import App.domain.Climber;
-import App.dto.ClimberRepository;
+import App.repository.ClimberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
 public class ClimberServices {
-    private final ClimberRepository repository;
-
-    public ClimberServices(ClimberRepository repository) {
-        this.repository = repository;
-    }
+    @Autowired
+    ClimberRepository repository;
 
     public List<Climber> findAll() {
 
