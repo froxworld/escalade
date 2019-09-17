@@ -11,12 +11,14 @@ import java.util.List;
 
 @Service
 public class RouteServices {
-    @Autowired
-    private RouteRepository repository;
+    private final RouteRepository repository;
+
+    public RouteServices(RouteRepository repository) {
+        this.repository = repository;
+    }
 
     public List<Route> findAll() {
 
-        List<Route> routes = (List<Route>) repository.findAll();
-        return routes;
+        return (List<Route>) repository.findAll();
     }
 }
