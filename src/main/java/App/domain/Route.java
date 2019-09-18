@@ -1,6 +1,8 @@
 package App.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 import java.util.Calendar;
@@ -10,7 +12,7 @@ import java.util.List;
 public class Route {
     int id;
 
-
+//@JsonBackReference
     List<Climber> climbers;
     String name;
     App.domain.Climber opener;
