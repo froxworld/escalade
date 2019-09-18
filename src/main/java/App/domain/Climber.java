@@ -1,6 +1,8 @@
 package App.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +64,7 @@ public class Climber {
     }
 
     @ManyToMany
+    @JsonBackReference
     @JoinTable( name = "FRIENDS")
     public List<Climber> getFriends() {
         return friends;

@@ -19,4 +19,12 @@ public class ClimberServices {
     public void addClimber(Climber climber) {
         repository.save(climber);
     }
+
+    public List<Climber> getAllFriends(String climber) {
+        return repository.findFriendsByName(climber);
+    }
+
+    public Climber findByName(String name) {
+        return repository.findByName(name);
+    }
 }
