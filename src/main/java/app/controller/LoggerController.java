@@ -1,4 +1,4 @@
-package App.controller;
+package app.controller;
 
 import io.swagger.annotations.Api;
 import org.slf4j.Logger;
@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Api(value = "login", description = "login")
-public class LoggingController {
+@Api(value = "Logger", tags = {"Operation for logger"})
+public class LoggerController {
 
-    Logger logger = LoggerFactory.getLogger(LoggingController.class);
+    private Logger logger = LoggerFactory.getLogger(LoggerController.class);
 
 
     @GetMapping("/log")
@@ -20,6 +20,7 @@ public class LoggingController {
         logger.info("An INFO Message");
         logger.warn("A WARN Message");
         logger.error("An ERROR Message");
+
         return "Howdy! Check out the Logs to see the output...";
     }
 }

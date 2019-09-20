@@ -1,7 +1,7 @@
-package App.services;
+package app.services;
 
-import App.domain.Route;
-import App.repository.RouteRepository;
+import app.domain.Route;
+import app.repository.RouteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

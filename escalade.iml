@@ -6,7 +6,7 @@
         <setting name="validation-enabled" value="true" />
         <datasource-mapping>
           <factory-entry name="dev" />
-          <factory-entry name="entityManagerFactory" />
+          <factory-entry name="entityManagerFactory" value="85a79072-b43b-467b-92a3-672b0ae5cb81" />
           <factory-entry name="mysql" />
           <factory-entry name="prod" />
         </datasource-mapping>

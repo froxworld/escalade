@@ -1,6 +1,6 @@
-package App.repository;
+package app.repository;
 
-import App.domain.Climber;
+import app.domain.Climber;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
@@ -10,6 +10,7 @@ public interface ClimberRepository extends CrudRepository<Climber, Long> {
 
     Climber findById(long i);
     Climber findByName(String name);
+
     @Query("SELECT c.friends FROM Climber c where c.name = :name")
     List<Climber> findFriendsByName(String name);
     void deleteByName(String name);

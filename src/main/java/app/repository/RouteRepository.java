@@ -1,6 +1,6 @@
-package App.repository;
+package app.repository;
 
-import App.domain.Route;
+import app.domain.Route;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

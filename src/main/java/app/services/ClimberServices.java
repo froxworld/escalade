@@ -1,7 +1,7 @@
-package App.services;
+package app.services;
 
-import App.domain.Climber;
-import App.repository.ClimberRepository;
+import app.domain.Climber;
+import app.repository.ClimberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -26,5 +26,17 @@ public class ClimberServices {
 
     public Climber findByName(String name) {
         return repository.findByName(name);
+    }
+
+    public Long addFriend(String name, String friend) {
+        Climber climber = findByName(name);
+        Climber climberFriend = findByName(friend);
+        climber.addFriend(climberFriend);
+        addClimber(climber);
+        return climberFriend.getId();
+    }
+
+    public void removeClimber(long id) {
+        repository.deleteById(id);
     }
 }
